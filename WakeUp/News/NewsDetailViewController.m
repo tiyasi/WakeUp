@@ -48,7 +48,7 @@
     [self.view setBackgroundColor:[UIColor brownColor]];
     NSLog(@"urlAddress in DetailsViewController in ViewDiDLoad=%@",urlAddressFromNewsController);
 
-    UIWebView *webV=[[UIWebView alloc]initWithFrame:[self.view bounds]];
+    UIWebView *webV=[[UIWebView alloc]initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height-44.0)];
     [webV setDelegate:self];
     [self.view addSubview:webV];
     [webV release];

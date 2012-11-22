@@ -18,10 +18,11 @@
     if (self)
     {
         // Initialization code
-        newsHeadlineLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, 0, 220,44)];
-        [newsHeadlineLabel setFont:[UIFont fontWithName:@"Helvetica" size:14.0]];
-        [newsHeadlineLabel setTextColor:[UIColor blueColor]];
-        [newsHeadlineLabel setBackgroundColor:[UIColor whiteColor]];
+        newsHeadlineLabel=[[UILabel alloc]initWithFrame:CGRectMake(10.0, 0.0, self.frame.size.width-40.0, 44.0)];
+        [newsHeadlineLabel setFont:[UIFont fontWithName:@"Helvetica" size:16.0]];
+        [newsHeadlineLabel setTextColor:[UIColor blackColor]];
+        [newsHeadlineLabel setBackgroundColor:[UIColor clearColor]];
+        [newsHeadlineLabel setLineBreakMode:UILineBreakModeTailTruncation];
         [self addSubview:newsHeadlineLabel];
     }
     return self;

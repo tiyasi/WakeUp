@@ -257,14 +257,14 @@
     UILabel *windLabel=[[UILabel alloc]initWithFrame:CGRectMake(0,
                                                                 120, 320, 40)];
     [windLabel setBackgroundColor:[UIColor clearColor]];
-    [windLabel setFont:[UIFont fontWithName:@"AmericanTypewriter" size:15]];
+    [windLabel setFont:[UIFont fontWithName:@"Helvetica" size:15]];
     [windLabel setTextAlignment:UITextAlignmentCenter];
     [windLabel setText:[NSString stringWithFormat:@"Wind Chill - %@",[weatherArray objectAtIndex:3]]];
     [self addSubview:windLabel];
     [windLabel release];
     
     NSArray *arr=[[NSString stringWithFormat:@"%@",[values objectAtIndex:25]]componentsSeparatedByString:@";"];
-    NSLog(@"dictionary=%@",arr);
+    //NSLog(@"dictionary=%@",arr);
     
     NSRange newlineRange1 = [[NSString stringWithFormat:@"%@",[arr objectAtIndex:1]] rangeOfString:@"\""];
     if(newlineRange1.location != NSNotFound)
@@ -285,7 +285,7 @@
     
     UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(-80,10, 200, 80)];
     [tempLabel setBackgroundColor:[UIColor clearColor]];
-    [tempLabel setFont:[UIFont fontWithName:@"AmericanTypewriter" size:18]];
+    [tempLabel setFont:[UIFont fontWithName:@"Helvetica" size:18]];
     [tempLabel setNumberOfLines:3];
     [tempLabel setTextAlignment:UITextAlignmentCenter];
     [tempLabel setText:[NSString stringWithFormat:@"%@C",[aDictionary objectForKey:@"temp"]]];
@@ -294,7 +294,7 @@
     
 //    UILabel *sunLabel=[[UILabel alloc]initWithFrame:CGRectMake(0,140, 120, 40)];
 //    [sunLabel setBackgroundColor:[UIColor clearColor]];
-//    [sunLabel setFont:[UIFont fontWithName:@"AmericanTypewriter" size:14]];
+//    [sunLabel setFont:[UIFont fontWithName:@"Helvetica" size:14]];
 //    [sunLabel setNumberOfLines:2];
 //    [sunLabel setTextAlignment:UITextAlignmentCenter];
 //    [sunLabel setText:[NSString stringWithFormat:@"Sunrise - %@\nSunset - %@",[aDictionary objectForKey:@"sunrise"],
@@ -305,7 +305,7 @@
     UILabel *climateNowLabel=[[UILabel alloc]initWithFrame:CGRectMake(50,
                                                                       130, 200, 80)];
     [climateNowLabel setBackgroundColor:[UIColor clearColor]];
-    [climateNowLabel setFont:[UIFont fontWithName:@"AmericanTypewriter" size:15]];
+    [climateNowLabel setFont:[UIFont fontWithName:@"Helvetica" size:15]];
     [climateNowLabel setNumberOfLines:3];
     [climateNowLabel setTextAlignment:UITextAlignmentCenter];
     [climateNowLabel setText:[NSString stringWithFormat:@"%@",[array objectAtIndex:1]]];

@@ -2,8 +2,8 @@
 //  main.m
 //  WakeUp
 //
-//  Created by Navjot on 8/11/12.
-//  Copyright (c) 2012 Navjot. All rights reserved.
+//  Created by Tiyasi on 8/11/12.
+//  Copyright (c) 2012 Tiyasi. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

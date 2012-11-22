@@ -48,16 +48,15 @@
 -(void)viewDesign
 {
     [self.navigationItem setTitle:[[eventData objectForKey:@"event"]objectForKey:@"name"]];
-    self.navigationItem.hidesBackButton=YES;
     
-    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
-                                initWithTitle:@"Back"
-                                style:UIBarButtonItemStyleBordered
-                                target:self
-                                action:@selector(OnClick_btnBack:)];
-    self.navigationItem.leftBarButtonItem = btnBack;
-    [btnBack release];
-    
+//    self.navigationItem.hidesBackButton=YES;    
+//    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+//                                initWithTitle:@"Back"
+//                                style:UIBarButtonItemStyleBordered
+//                                target:self
+//                                action:@selector(OnClick_btnBack:)];
+//    self.navigationItem.leftBarButtonItem = btnBack;
+//    [btnBack release];    
     
     UIImageView *eventImgV=[[UIImageView alloc]init];
     [eventImgV setBackgroundColor:[UIColor clearColor]];

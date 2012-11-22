@@ -48,8 +48,7 @@
   
     titleString=[[NSString alloc]init];
     
-    // Do any additional setup after loading the view, typically from a nib.
-    tabView=[[UITableView alloc]initWithFrame:[self.view bounds]];
+    tabView=[[UITableView alloc]initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height-44.0)];
     [tabView setBackgroundColor:[UIColor clearColor]];
     [tabView setDelegate:self];
     [tabView setDataSource:self];
@@ -166,6 +165,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     NSArray *strs = [[linkArray objectAtIndex:indexPath.row] componentsSeparatedByString: @"html"]; 
 
     NSString *urlAddress =[NSString stringWithFormat:@"%@html",[strs objectAtIndex:0]];

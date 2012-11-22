@@ -32,7 +32,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"Wake Up!";
+        self.title = @"WakeUp!";
     }
     
     
@@ -64,12 +64,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self.view setBackgroundColor:[UIColor clearColor]];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    
     UIBarButtonItem *newsButton = [[UIBarButtonItem alloc]initWithTitle:@"News" style:UIBarButtonItemStylePlain target:self action:@selector(bringNews)];
     
     UIBarButtonItem *eventButton= [[UIBarButtonItem alloc] initWithTitle:@"Event" style:UIBarButtonItemStylePlain target:self action:@selector(bringEvents)];
     
-    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:newsButton, eventButton, nil];
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:newsButton, nil];
+    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:eventButton, nil];
 
     //NS: do whatever VIEW stuff you want to do in the method layoutSubviews --
     
@@ -91,7 +93,7 @@
 {
     SetAlarmController *alarmController = [[SetAlarmController alloc] init];
     
-    [alarmController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [alarmController setModalTransitionStyle:UIModalTransitionStylePartialCurl];
     [self presentModalViewController:alarmController animated:YES];
     [alarmController release];
 }
@@ -107,7 +109,7 @@
     UILabel *nextAlarm = [[UILabel alloc] initWithFrame:CGRectMake(20, (self.view.frame.size.height/2)*0.9+200-80, 150, 40)];
     [nextAlarm setText:@"Next Ring:"];
     [nextAlarm setTextAlignment:UITextAlignmentLeft];
-    [nextAlarm setFont:[UIFont fontWithName:@"AmericanTypewriter-Bold" size:25]];
+    [nextAlarm setFont:[UIFont fontWithName:@"Helvetica-Bold" size:25]];
     [self.view addSubview:nextAlarm];
     [nextAlarm release];
     
@@ -119,12 +121,16 @@
     [setAlarmBtn setFrame:CGRectMake(320-100, 300, 90, 40)];
     [setAlarmBtn setBackgroundColor:[UIColor blackColor]];
     [setAlarmBtn setTitle:@"Set More" forState:UIControlStateNormal];
-    [setAlarmBtn.titleLabel setFont:[UIFont fontWithName:@"AmericanTypewriter" size:15]];
+    [setAlarmBtn.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:15]];
     [setAlarmBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [setAlarmBtn setBorderWidth:2.0 withColor:[UIColor blackColor] withCornerRadius:4.0];
     [setAlarmBtn addTarget:self action:@selector(setAlarm) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:setAlarmBtn];
  
+//    UIView *horizontalSeparator = [[UIView alloc] initWithFrame:CGRectMake(0.0, setAlarmBtn.frame.origin.y-40.0, self.view.frame.size.width, 2.0)];
+//    [horizontalSeparator setBackgroundColor:[UIColor colorWithHue:0.2 saturation:0.8 brightness:0.6 alpha:1]];
+//    [self.view addSubview:horizontalSeparator];
+//    [horizontalSeparator release];
 }
 
 - (void)viewDidUnload

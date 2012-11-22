@@ -8,6 +8,7 @@
 
 #import "SetAlarmController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "UIView+Extension.h"
 
 @interface SetAlarmController ()
 {
@@ -41,19 +42,23 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self.view setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.8]];
+    [self.view setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:1.0]];
     
     UIButton *backButton=[UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setBackgroundColor:[UIColor greenColor]];
-    [backButton setFrame:CGRectMake(5, 5, 54, 40)];
+    [backButton setBackgroundColor:[UIColor whiteColor]];
+    [backButton setFrame:CGRectMake(self.view.frame.size.width/2-54/2, self.view.frame.size.height-30-10, 54, 30)];
     [backButton setTitle:@"Back" forState:UIControlStateNormal];
+    [backButton.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:15]];
+    [backButton setBorderWidth:1.0 withColor:[UIColor blackColor] withCornerRadius:4.0];
+    [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [backButton setTitleColor:[UIColor colorWithWhite:0.0 alpha:0.5] forState:UIControlStateHighlighted];
     [self.view addSubview:backButton];
     [backButton addTarget:self action:@selector(backButtonMethod:) forControlEvents:UIControlEventTouchUpInside];
     
     NSTimeZone *timeZone=[NSTimeZone localTimeZone];
     
     datePicker =[[UIDatePicker alloc]init];
-    [datePicker setFrame:CGRectMake((320-250)/2, 100, 250, 50)];
+    [datePicker setFrame:CGRectMake((320-250)/2, 160, 250, 50)];
     [datePicker setTimeZone:timeZone];
     [datePicker setMinimumDate:[NSDate date]];
     [datePicker setDate:[NSDate date]];
@@ -90,7 +95,6 @@
 
 -(void)backButtonMethod:(id)sender
 {
-    NSLog(@"Hello");
     [self dismissModalViewControllerAnimated:YES];
 }
 

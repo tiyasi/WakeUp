@@ -63,7 +63,7 @@
                 [eventsArray addObject:[[each objectForKey:@"event"]objectForKey:@"name"]];
             }
             
-            NSLog(@"\n\n\n\n\nresult=%@",result);
+            //NSLog(@"\n\n\n\n\nresult=%@",result);
         }
         else
         {
@@ -73,7 +73,7 @@
         [tabView reloadData];
     }];
     
-    [self setTitle:@"Popular Events"];
+    [self setTitle:@"Events"];
 }
 
 
@@ -83,7 +83,7 @@
     [api fetchEventDetailsForEvent:eventId withCallback:^(BOOL success, id result)
     {
         resultData=result;
-        NSLog(@"\n\n\n\n\n\ndetails - %@", resultData);
+        //NSLog(@"\n\n\n\n\n\ndetails - %@", resultData);
         
         EventDetailViewController *detailViewController=[[EventDetailViewController alloc]initWithData:resultData];
         [self.navigationController pushViewController:detailViewController animated:YES];
@@ -112,17 +112,16 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    
-    // Configure the cell...
     [cell setBackgroundColor:[UIColor lightGrayColor]];
-    cell.textLabel.textColor =[UIColor blueColor];
-    [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica" size:14]];
+    cell.textLabel.textColor =[UIColor blackColor];
+    [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica" size:16]];
     cell.textLabel.text = [eventsArray objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{        
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self fetchEventDetailsWithEventName:[events objectAtIndex:indexPath.row]];
 }
  

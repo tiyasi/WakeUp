@@ -2,7 +2,7 @@
 //  EventzDataManager.h
 //  EventzApp
 //
-//  Created by Navjot on 6/6/12.
+//  Created by Tiyasi on 6/6/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
